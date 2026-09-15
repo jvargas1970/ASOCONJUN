@@ -1,0 +1,16 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Buscar socio</title>
+</head>
+<body>
+    <h2>Digite su carnet de colegiado</h2>
+    <form method="post">
+        {% csrf_token %}
+        <input type="text" name="carne_colegiado" placeholder="Carnet colegiado" required>
+        <button type="submit">Continuar</button>
+    </form>
+</body>
+</html>
