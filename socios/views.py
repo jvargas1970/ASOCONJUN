@@ -142,5 +142,3 @@ def aprobar_view(request, user_id):
 
 from django.http import HttpResponse
 
-def index(request):
-    return render(request, 'socios/index.html')
