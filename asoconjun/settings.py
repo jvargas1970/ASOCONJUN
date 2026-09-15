@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-7+nc_&c134m!q#d4@wuyxr7$t^6c353j$(osq8=6b6uy+up5zs
 DEBUG = False
 
 ALLOWED_HOSTS = ['asoconjun.onrender.com', '127.0.0.1', 'localhost']
-
+CSRF_TRUSTED_ORIGINS = ['https://asoconjun.onrender.com']
 
 # Application definition
 
@@ -141,4 +141,4 @@ import dj_database_url
 DATABASES = {
     'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))
 }
-CSRF_TRUSTED_ORIGINS = ['https://asoconjun.onrender.com']
+
