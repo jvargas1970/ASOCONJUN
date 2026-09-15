@@ -4,11 +4,12 @@
     <title>ASOCONJUN</title>
 </head>
 <body>
-    <h1>Lista de Socios</h1>
+    <h1>Bienvenido a ASOCONJUN 🚀</h1>
+    <p>Seleccione una opción:</p>
     <ul>
-        {% for socio in socios %}
-            <li>{{ socio.nombre }} - {{ socio.estado }}</li>
-        {% endfor %}
+        <li><a href="/registro/">Registrar socio</a></li>
+        <li><a href="/aprobar/">Aprobar socios</a></li>
+        <li><a href="/admin/">Panel de administración</a></li>
     </ul>
 </body>
 </html>
