@@ -140,4 +140,7 @@ def aprobar_view(request, user_id):
         messages.error(request, "Usuario no encontrado")
     return redirect('/admin/auth/user/')
 
+from django.http import HttpResponse
 
+def index(request):
+    return HttpResponse("Bienvenido a ASOCONJUN 🚀")
