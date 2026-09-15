@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ASOCONJUN</title>
+</head>
+<body>
+    <h1>Lista de Socios</h1>
+    <ul>
+        {% for socio in socios %}
+            <li>{{ socio.nombre }} - {{ socio.estado }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

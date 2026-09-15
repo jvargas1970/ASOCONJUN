@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-7+nc_&c134m!q#d4@wuyxr7$t^6c353j$(osq8=6b6uy+up5zs
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['sercoaconta.com', 'www.sercoaconta.com']
+ALLOWED_HOSTS = ['asoconjun.onrender.com', '127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'socios',
+    'rest_framework'
 ]
 
 MIDDLEWARE = [
@@ -132,3 +134,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 STATIC_URL = '/static/'
 
 STATIC_ROOT = BASE_DIR / 'staticfiles'
+
+import os
+import dj_database_url
+
+DATABASES = {
+    'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))
+}
+CSRF_TRUSTED_ORIGINS = ['https://asoconjun.onrender.com']
