@@ -143,4 +143,4 @@ def aprobar_view(request, user_id):
 from django.http import HttpResponse
 
 def index(request):
-    return HttpResponse("Bienvenido a ASOCONJUN 🚀")
+    return render(request, 'socios/index.html')
