@@ -17,13 +17,26 @@ def index(request):
 def validar_carnet_view(request):
     if request.method == 'POST':
         carnet = request.POST.get('carnet_colegiado')
+        if not carnet:
+            messages.error(request, "Debe ingresar un carnet válido.")
+            return render(request, 'socios/validar_carnet.html')
 
-        if Socio.objects.filter(carnet_colegiado=carnet).exists() and not User.objects.filter(username=carnet).exists():
-            return render(request, 'socios/registro_usuario.html', {'carnet': carnet})
-        elif User.objects.filter(username=carnet).exists():
-            return render(request, 'socios/login_existente.html', {'carnet': carnet})
-        else:
-            return render(request, 'socios/no_afiliado.html', {'carnet': carnet})
+        carnet = carnet.strip()  # elimina espacios
+
+        try:
+            socio_existe = Socio.objects.filter(carnet_colegiado=carnet).exists()
+            usuario_existe = User.objects.filter(username=carnet).exists()
+
+            if socio_existe and not usuario_existe:
+                return render(request, 'socios/registro_usuario.html', {'carnet': carnet})
+            elif usuario_existe:
+                return render(request, 'socios/login_existente.html', {'carnet': carnet})
+            else:
+                return render(request, 'socios/no_afiliado.html', {'carnet': carnet})
+
+        except Exception as e:
+            messages.error(request, f"Error al validar el carnet: {e}")
+            return render(request, 'socios/validar_carnet.html')
 
     return render(request, 'socios/validar_carnet.html')
 
