@@ -8,7 +8,7 @@
     <h2>Socio ya registrado</h2>
     <p><strong>Nombre:</strong> {{ socio.nombre }}</p>
     <p><strong>Email:</strong> {{ socio.email_personal }}</p>
-    <p><strong>Carnet:</strong> {{ socio.carne_colegiado }}</p>
+    <p><strong>Carnet:</strong> {{ socio.carnet_colegiado }}</p>
     <p><strong>Rol:</strong> {% if socio.user.is_staff %}Administrador{% else %}Socio{% endif %}</p>
 </body>
 </html>
