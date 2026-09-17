@@ -79,7 +79,7 @@ USE_TZ = True
 
 # Archivos estáticos (CSS, JS, imágenes)
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [BASE_DIR / "asoconjun" / "static"]   # Carpeta donde guardas tus imágenes
+STATICFILES_DIRS = [BASE_DIR / "static"]   # Carpeta donde guardas tus imágenes
 STATIC_ROOT = BASE_DIR / "staticfiles"     # Carpeta que Render usa para servir estáticos
 
 # Default primary key field type
